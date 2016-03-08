@@ -1,0 +1,153 @@
+/* Base */
+
+* {
+  box-sizing: border-box;
+}
+
+:root{
+  font-family: 'Catamaran', sans-serif;
+  font-size: 16px;
+  color: $font-default-color;
+  line-height: 1.4;
+}
+
+body{
+  background: rgb(234,234,234);
+  background:    -moz-linear-gradient(left, rgb(234,234,234) 0%, rgb(242,242,242) 100%);
+  background: -webkit-linear-gradient(left, rgb(234,234,234) 0%, rgb(242,242,242) 100%);
+  background: linear-gradient(to right, rgb(234,234,234) 0%, rgb(242,242,242) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#f2f2f2',GradientType=1 );
+}
+
+h1, h2, h3, h4, p{
+  margin-top: 0;
+}
+
+a{
+  transition: color 0.2s;
+}
+
+p{
+  font-size: 16px;
+}
+
+.screenreader{
+  @include screenreader();
+}
+
+.logo{
+  font-family: 'Cherry Swash', cursive;
+}
+
+
+.page-wrap{
+  @include container();
+
+  @media(min-width: $bp-sm){
+    max-width: $container-sm;
+  }
+  @media(min-width: $bp-md){
+    max-width: $container-md;
+  }
+  @media(min-width: $bp-lg){
+    max-width: $container-lg;
+  }
+  @media(min-width: $bp-xl){
+    max-width: $container-xl;
+  }
+}
+
+
+// -- Site header --
+header{
+  margin-bottom: 30px;
+  padding: 15px 0 0 10px;
+  border-bottom: 1px solid #e2e2e2;
+
+  h1{
+    margin-bottom: 10px;
+    display: inline-block;
+    font-size: 32px;
+    color: #bf1010;
+  }
+  p{
+    margin-left: 15px;
+    display: inline-block;
+    font-style: italic;
+    font-size: .95em;
+    letter-spacing: .02em;
+  }
+
+}
+
+
+// -- Site footer --
+footer{
+  @include row();
+  margin-top: 30px;
+  padding: 20px 0 30px;
+  border-top: 1px solid #e2e2e2;
+
+  .info{
+    @include col(12,12);
+    text-align: center;
+
+    p{
+      font-size: 15px;
+    }
+    
+    a{
+      display: inline-block;
+      text-decoration: none;
+      line-height: 1.2;
+      border-bottom: 1px dotted $grey-md;
+    }
+    .tagline{
+      display: block;
+    }
+  } // .info
+
+  .social{
+    @include col(12,12);
+    text-align: center;
+
+    > a{
+      margin-left: 20px;
+      font-size: 40px;
+      color: $grey-md;
+      text-decoration: none;
+      line-height: 1;
+
+      &:first-child{
+        margin-left: 0;
+      }
+
+      &:hover{
+        color: darken($grey-md, 20%);
+      }
+    }
+  } // .social
+
+  
+  @media(min-width: $bp-md){
+    .info, .social{
+      @include col(1, 2, $gap: 10px);
+    }
+
+    .info{
+      text-align: left;
+      line-height: 40px;
+      
+      .tagline{
+        display: inline;
+      }
+    }
+
+    .social{
+      text-align: right;
+    }
+
+
+  }
+
+} // footer

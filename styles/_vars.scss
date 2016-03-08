@@ -1,0 +1,31 @@
+// == Vars ==
+
+
+// Breakpoints
+$bp-sm:  481px;
+$bp-md:  768px;
+$bp-lg:  960px;
+$bp-xl: 1200px;
+
+
+// Container widths
+$container-sm:  98%;
+$container-md:  742px;
+$container-lg:  940px;
+$container-xl: 1008px;
+
+
+// Colors
+$grey-light: #e2e2e2;
+$grey-md-light: #d2d2d2;
+$grey-md: #999;
+$grey-dark: #222;
+
+
+// Fonts
+@import url(https://fonts.googleapis.com/css?family=Cherry+Swash:700|Catamaran:400,700);
+$font-path: "/fonts" !default;
+$font-default-size: 16px;
+$font-default-color: $grey-dark;
+
+

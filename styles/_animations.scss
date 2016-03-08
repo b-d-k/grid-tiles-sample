@@ -1,0 +1,13 @@
+/* Animations */
+
+// -- CTA caret movement --
+@keyframes caret-slider{
+  from {
+    transform: translateX(0);
+    color: inherit;
+  }
+  to {
+    transform: translateX(2px);
+    color: #bf1010;
+  }
+}

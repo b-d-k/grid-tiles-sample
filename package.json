@@ -1,0 +1,23 @@
+{
+  "name": "digitas-grid",
+  "version": "1.0.0",
+  "description": "Code sample for Digitas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://borisdk@bitbucket.org/borisdk/digitas-grid.git"
+  },
+  "author": "Boris",
+  "license": "WTFPL",
+  "homepage": "https://bitbucket.org/borisdk/digitas-grid#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.3.3",
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1",
+    "gulp-sass": "^2.2.0",
+    "gulp-webserver": "^0.9.1"
+  }
+}

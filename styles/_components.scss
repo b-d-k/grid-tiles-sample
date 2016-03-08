@@ -1,0 +1,40 @@
+/* Components */
+
+// -- Buttons --
+
+// General button
+.btn{
+  padding: 4px 9px;
+  display: inline-block;
+  font-size: 0.9em;
+  font-weight: 700;
+  color: $grey-dark;
+  line-height: 1;
+  text-decoration: none;
+  border: 1px solid $grey-md-light;
+  transition: background-color 0.3s;
+
+  // CTA button for tiles
+  &.cta{
+    color: #bf1010;
+
+    .caret{
+      width: 0;
+      height: 0;
+      margin-left: 3px;
+      display: inline-block;
+      // - moving up works somehow better than vertical alignment
+      position: relative;
+      top: 1px;
+      //vertical-align: middle;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-left: 6px dashed;      
+    }
+  
+  }
+
+
+  
+}
+

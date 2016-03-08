@@ -1,0 +1,178 @@
+/* Home */
+
+
+// -- Tiles List --
+.tiles{
+  @include row();
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  li{
+    @include col(12, 12, $gap: 0);
+    background-color: #fff;
+
+    img{
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .tileinfo{
+      padding: 10px 10px 25px;
+      position: relative;
+
+      // triangle
+      &::before{
+        width: 0;
+        height: 0;
+        position: absolute;
+        top: -10px;
+        left: 12px;
+        content: "";
+        border-style: solid;
+        border-width: 0 9px 11px 9px;
+        border-color: transparent transparent #fff transparent;
+      }
+
+      h3{
+        margin-bottom: 0;
+        font-size: 18px;
+        
+        a{
+          //color: #719004;
+          color: #00648d;
+          text-decoration: none;
+        }
+        
+      }
+
+      .cta{
+        position: absolute;
+        right: 10px;
+        bottom: 10px;
+      }
+      
+    } // .tileinfo
+    
+
+    
+    @media(min-width: $bp-sm){
+      
+      // -- Image left, text right --
+      height: 100%;
+      margin-bottom: 4px;
+      position: relative;
+      display: table;
+      white-space: nowrap;
+
+      img, .tileinfo{
+        @include col(1, 2, $gap: 0);
+      }
+      
+      .tileinfo{
+        height: 100%;
+        padding: 10px 6px 0;
+        display: inline-table; // enable 100% height
+        white-space: normal; // reset parent container value
+
+        &::before{
+          top: 12px;
+          left: -12px;
+          border-width: 10px 13px 10px 0;
+          border-color: transparent #fff transparent transparent;
+        }
+
+        .cta{
+          position: absolute;
+          bottom: 10px;
+          right: 15px;
+          display: block;
+        }
+      }
+
+      
+      &:hover, &:active{
+        opacity: 0.95;
+
+        .cta .caret{
+          animation-duration: .2s;
+          animation-name: caret-slider;
+          animation-iteration-count: 2;
+          animation-direction: alternate;
+        }
+      }
+
+    } // sm screen
+
+
+    
+    @media(min-width: $bp-md){
+      // -- Back to image top, text bottom. But two columns. --
+      
+      @include col(6, 12, $gap: 0);
+      margin-bottom: 6px;
+      
+      // Reset whitespace 
+      white-space: normal;
+
+      // 'pull' tiles apart to show page bg
+      &:nth-of-type(odd){
+        left: -2px;
+      }
+      &:nth-of-type(even){
+        right: -2px;
+      }
+
+
+      img, .tileinfo{
+        @include col(1, 1, $gap: 0);
+      }
+      .tileinfo{
+        min-height: 8em;
+        padding: 15px 10px;
+
+        // and the triangle again
+        &::before{
+          top: -10px;
+          left: 12px;
+          border-width: 0 9px 11px 9px;
+          border-color: transparent transparent #fff transparent;
+        }
+      }
+
+    } // md screen
+
+
+    @media(min-width: $bp-lg){
+      
+      // -- Same as md, but three cols. --
+      
+      @include col(4, 12, $gap: 0);
+    
+      // reset odd/even
+      &:nth-of-type(odd){
+        left: auto;
+      }
+      &:nth-of-type(even){
+        right: auto;
+      }
+      // 1st to the left, 3rd to the right
+      &:nth-of-type(3n+1){
+        left: -4px;
+      }
+      &:nth-of-type(3n+3){
+        right: -4px;
+      }
+
+      .tileinfo{
+        min-height: 9em;
+      }
+
+    } // lg screen
+
+    
+  } // li
+
+} // .tiles

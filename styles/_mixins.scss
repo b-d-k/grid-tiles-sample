@@ -1,0 +1,63 @@
+/* Mixins */
+
+
+// -- General --
+// -------------
+@mixin clearfix(){
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// -- Hide visually, screenreader-friendly --
+@mixin screenreader(){
+  border: 0 none;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+
+  &:active,
+  &:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+  }
+}
+
+
+
+// -- Grid Mixins --
+// -----------------
+@mixin container($width: 100%){
+  max-width: $width;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+@mixin row(){
+  @include clearfix();
+  font-size: 0;
+}
+
+
+@mixin col($col, $sum, $gap: 1em, $align: top, $first: false, $last: false) {
+  width: percentage($col/$sum);
+  padding-left: if($first, 0, $gap);
+  padding-right: if($last, 0, $gap);
+  display: inline-block;
+  vertical-align: $align;
+  font-size: $font-default-size;
+}
