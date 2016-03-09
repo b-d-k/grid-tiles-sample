@@ -14,6 +14,8 @@ Free free to provide this as a codepen, publish it to github, or your personal s
 ## Solution
 A minimal design that suggests some sort of travel site. As the browser window grows, the tile copy moves from bottom to right and back to the bottom to retain a good image/text ratio. A little button animation is added on tile hover after the 1st breakpoint.
 
+![Screenshot](screenshot.jpg)
+
 
 
 ## Usage
